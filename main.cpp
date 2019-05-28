@@ -281,11 +281,11 @@ int test(mthreads_pool &mp)
 
 		memcpy(arg->dip, cnf.dest.c_str(), cnf.dest.length());
 		memcpy(arg->dmac, dmac, 6);
-		arg->dport = 8080;
+		arg->dport = atoi(cnf.dport.c_str());
 		memcpy(arg->sip, ip_str, sizeof(ip_str));
 		memcpy(arg->smac, pmac, 6);
 		memcpy(arg->interface, cnf.interface.c_str(), cnf.interface.length());
-		arg->sport = 5555;
+		arg->sport = atoi(cnf.sport.c_str());
 
 		mtpool_work work(work_func, arg);
 		mp.mthreads_addwork(work);
