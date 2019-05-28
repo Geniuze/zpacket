@@ -305,7 +305,7 @@ void arg_options(int argc, char **argv)
 		{
 		case 'h':
 			help();
-			break;
+			exit(0);
 		case 'c':
 			cnf.count = string(optarg);
 			break;
